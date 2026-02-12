@@ -1,1030 +1,1047 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"
-    />
-    <title>Will You Be My Valentine? 💝</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <style>
-      :root {
-        /* Warm Romantic Palette - matching anime aesthetic */
-        --cream-bg: #f5e6d3;
-        --warm-brown: #8b6f47;
-        --soft-peach: #ffb4a2;
-        --coral: #ff6b6b;
-        --rose-pink: #ff8fa3;
-        --deep-rose: #d63447;
-        --warm-gold: #ffd89b;
-        --light-cream: #fff9f0;
 
-        /* Typography */
-        --font-display: "Playfair Display", serif;
-        --font-body: "Cormorant Garamond", serif;
-        --font-accent: "Montserrat", sans-serif;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+  <title>Hey Shifa ❤️ Will you be my Valentine?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      /* Warm Romantic Palette - matching anime aesthetic */
+      --cream-bg: #f5e6d3;
+      --warm-brown: #8b6f47;
+      --soft-peach: #ffb4a2;
+      --coral: #ff6b6b;
+      --rose-pink: #ff8fa3;
+      --deep-rose: #d63447;
+      --warm-gold: #ffd89b;
+      --light-cream: #fff9f0;
 
-        /* Spacing */
-        --space-xs: 0.5rem;
-        --space-sm: 1rem;
-        --space-md: 1.5rem;
-        --space-lg: 2.5rem;
-        --space-xl: 4rem;
+      /* Typography */
+      --font-display: "Playfair Display", serif;
+      --font-body: "Cormorant Garamond", serif;
+      --font-accent: "Montserrat", sans-serif;
+
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      padding: var(--space-md);
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: var(--cream-bg);
+    }
+
+    /* Beautiful anime couple background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("valen.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: 1;
+    }
+
+    /* Soft romantic overlay to ensure text readability */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse at top,
+          rgba(255, 249, 240, 0.3) 0%,
+          transparent 50%),
+        radial-gradient(ellipse at bottom,
+          rgba(245, 230, 211, 0.4) 0%,
+          transparent 50%),
+        linear-gradient(180deg,
+          rgba(255, 249, 240, 0.5) 0%,
+          rgba(255, 240, 220, 0.4) 30%,
+          rgba(255, 235, 215, 0.3) 70%,
+          rgba(245, 230, 211, 0.5) 100%);
+      animation: softGlow 15s ease-in-out infinite;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    @keyframes softGlow {
+
+      0%,
+      100% {
+        opacity: 0.9;
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      50% {
+        opacity: 0.95;
       }
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
+    /* Floating hearts */
+    #decorativeElements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 4;
+      overflow: hidden;
+    }
 
-      body {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-body);
-        padding: var(--space-md);
-        position: relative;
-        overflow-x: hidden;
-        overflow-y: auto;
-        background: var(--cream-bg);
-      }
+    .floating-heart {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0;
+      animation: heartFloat 10s ease-in infinite;
+      filter: drop-shadow(0 2px 6px rgba(255, 107, 107, 0.4));
+    }
 
-      /* Beautiful anime couple background */
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("valen.jpeg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        z-index: 1;
-      }
-
-      /* Soft romantic overlay to ensure text readability */
-      body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background:
-          radial-gradient(
-            ellipse at top,
-            rgba(255, 249, 240, 0.3) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            ellipse at bottom,
-            rgba(245, 230, 211, 0.4) 0%,
-            transparent 50%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(255, 249, 240, 0.5) 0%,
-            rgba(255, 240, 220, 0.4) 30%,
-            rgba(255, 235, 215, 0.3) 70%,
-            rgba(245, 230, 211, 0.5) 100%
-          );
-        animation: softGlow 15s ease-in-out infinite;
-        z-index: 2;
-        pointer-events: none;
-      }
-
-      @keyframes softGlow {
-        0%,
-        100% {
-          opacity: 0.9;
-        }
-        50% {
-          opacity: 0.95;
-        }
-      }
-
-      /* Floating hearts */
-      #decorativeElements {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 4;
-        overflow: hidden;
-      }
-
-      .floating-heart {
-        position: absolute;
-        font-size: 24px;
+    @keyframes heartFloat {
+      0% {
+        transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.8);
         opacity: 0;
-        animation: heartFloat 10s ease-in infinite;
-        filter: drop-shadow(0 2px 6px rgba(255, 107, 107, 0.4));
       }
 
-      @keyframes heartFloat {
-        0% {
-          transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.8);
-          opacity: 0;
-        }
-        10% {
-          opacity: 0.7;
-        }
-        90% {
-          opacity: 0.5;
-        }
-        100% {
-          transform: translateY(-10vh) translateX(50px) rotate(360deg)
-            scale(1.2);
-          opacity: 0;
-        }
+      10% {
+        opacity: 0.7;
       }
 
-      /* Sparkle effect */
-      .sparkle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: var(--warm-gold);
-        border-radius: 50%;
-        box-shadow: 0 0 10px var(--warm-gold);
-        animation: sparkleAnim 3s ease-in-out infinite;
-      }
-
-      @keyframes sparkleAnim {
-        0%,
-        100% {
-          opacity: 0;
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1.5);
-        }
-      }
-
-      /* Main container */
-      .container {
-        width: 100%;
-        max-width: 700px;
-        position: relative;
-        z-index: 10;
-      }
-
-      .card {
-        background: url("valen.jpeg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        padding: var(--space-xl);
-        border-radius: 2.5rem;
-        box-shadow:
-          0 30px 80px rgba(139, 111, 71, 0.15),
-          0 10px 40px rgba(255, 107, 107, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.9);
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        position: relative;
-        animation: cardEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      /* Decorative frame corners */
-      .card::before,
-      .card::after {
-        content: "";
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        border: 3px solid var(--rose-pink);
-        opacity: 0.3;
-      }
-
-      .card::before {
-        top: -2px;
-        left: -2px;
-        border-right: none;
-        border-bottom: none;
-        border-top-left-radius: 2.5rem;
-      }
-
-      .card::after {
-        bottom: -2px;
-        right: -2px;
-        border-left: none;
-        border-top: none;
-        border-bottom-right-radius: 2.5rem;
-      }
-
-      @keyframes cardEntrance {
-        0% {
-          opacity: 0;
-          transform: translateY(50px) scale(0.95);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      /* Decorative hearts on corners */
-      .corner-heart {
-        position: absolute;
-        font-size: 2rem;
-        animation: heartPulse 2s ease-in-out infinite;
-        filter: drop-shadow(0 2px 8px rgba(255, 107, 107, 0.4));
-      }
-
-      .corner-heart.top-left {
-        top: -15px;
-        left: -15px;
-        color: var(--coral);
-      }
-
-      .corner-heart.bottom-right {
-        bottom: -15px;
-        right: -15px;
-        color: var(--rose-pink);
-      }
-
-      @keyframes heartPulse {
-        0%,
-        100% {
-          transform: scale(1);
-          opacity: 0.8;
-        }
-        50% {
-          transform: scale(1.15);
-          opacity: 1;
-        }
-      }
-
-      /* Ornamental divider */
-      .ornament {
-        text-align: center;
-        margin: var(--space-lg) 0;
-        font-size: 1.5rem;
-        color: var(--coral);
+      90% {
         opacity: 0.5;
-        animation: ornamentShine 4s ease-in-out infinite;
       }
 
-      @keyframes ornamentShine {
-        0%,
-        100% {
-          opacity: 0.5;
-        }
-        50% {
-          opacity: 0.8;
-        }
-      }
-
-      /* Typography - IMPROVED TITLE */
-      .card-title {
-        font-family: var(--font-display);
-        font-size: clamp(2.5rem, 8vw, 4rem);
-        font-weight: 900;
-        color: #ffffff;
-        text-align: center;
-        letter-spacing: 0.02em;
-        line-height: 1.2;
-        
-        margin-top: 40px;
-        margin-bottom: 20px;
-        padding: 0 20px;
-        
-        text-shadow: 
-          0 2px 10px rgba(0, 0, 0, 0.3),
-          0 4px 20px rgba(214, 52, 71, 0.4),
-          0 0 40px rgba(255, 107, 107, 0.3);
-        
-        animation: titleFloat 3s ease-in-out infinite;
-      }
-
-      @keyframes titleFloat {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-5px);
-        }
-      }
-
-      /* IMPROVED SUBTITLE */
-      .card-subtitle {
-        font-family: var(--font-body);
-        font-size: clamp(1.2rem, 3.5vw, 1.5rem);
-        font-weight: 500;
-        color: #ffffff;
-        
-        text-align: center;
-        line-height: 1.6;
-        
-        margin-top: 10px;
-        margin-bottom: 35px;
-        padding: 0 30px;
-        
-        text-shadow: 
-          0 2px 8px rgba(0, 0, 0, 0.4),
-          0 1px 3px rgba(0, 0, 0, 0.3);
-        
-        animation: fadeInUp 1s ease-out 0.3s forwards;
+      100% {
+        transform: translateY(-10vh) translateX(50px) rotate(360deg) scale(1.2);
         opacity: 0;
       }
+    }
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(15px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+    /* Sparkle effect */
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--warm-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--warm-gold);
+      animation: sparkleAnim 3s ease-in-out infinite;
+    }
+
+    @keyframes sparkleAnim {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: scale(0);
       }
 
-      /* Button container */
-      .btn-container {
-        position: relative;
-        min-height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: var(--space-xl) 0;
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+
+    /* Main container */
+    .container {
+      width: 100%;
+      max-width: 700px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .card {
+      background: url("valen.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      padding: var(--space-xl);
+      border-radius: 2.5rem;
+      box-shadow:
+        0 30px 80px rgba(139, 111, 71, 0.15),
+        0 10px 40px rgba(255, 107, 107, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      position: relative;
+      animation: cardEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Decorative frame corners */
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 3px solid var(--rose-pink);
+      opacity: 0.3;
+    }
+
+    .card::before {
+      top: -2px;
+      left: -2px;
+      border-right: none;
+      border-bottom: none;
+      border-top-left-radius: 2.5rem;
+    }
+
+    .card::after {
+      bottom: -2px;
+      right: -2px;
+      border-left: none;
+      border-top: none;
+      border-bottom-right-radius: 2.5rem;
+    }
+
+    @keyframes cardEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
       }
 
-      .btn-group {
-        display: flex;
-        gap: var(--space-md);
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Decorative hearts on corners */
+    .corner-heart {
+      position: absolute;
+      font-size: 2rem;
+      animation: heartPulse 2s ease-in-out infinite;
+      filter: drop-shadow(0 2px 8px rgba(255, 107, 107, 0.4));
+    }
+
+    .corner-heart.top-left {
+      top: -15px;
+      left: -15px;
+      color: var(--coral);
+    }
+
+    .corner-heart.bottom-right {
+      bottom: -15px;
+      right: -15px;
+      color: var(--rose-pink);
+    }
+
+    @keyframes heartPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.8;
       }
 
-      /* Beautiful button styles */
-      .btn {
-        font-family: var(--font-accent);
-        padding: 1.25rem 2.75rem;
-        font-weight: 600;
-        font-size: 1.05rem;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        position: relative;
-        min-width: 150px;
-        max-width: 220px;
-        flex: 1;
-        overflow: hidden;
-        touch-action: manipulation;
-        user-select: none;
+      50% {
+        transform: scale(1.15);
+        opacity: 1;
+      }
+    }
+
+    /* Ornamental divider */
+    .ornament {
+      text-align: center;
+      margin: var(--space-lg) 0;
+      font-size: 1.5rem;
+      color: var(--coral);
+      opacity: 0.5;
+      animation: ornamentShine 4s ease-in-out infinite;
+    }
+
+    @keyframes ornamentShine {
+
+      0%,
+      100% {
+        opacity: 0.5;
       }
 
-      /* Yes button - Warm coral gradient */
-      .btn-yes {
-        background: linear-gradient(
-          135deg,
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    /* Typography - IMPROVED TITLE */
+    .card-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 900;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding: 0 20px;
+
+      text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.3),
+        0 4px 20px rgba(214, 52, 71, 0.4),
+        0 0 40px rgba(255, 107, 107, 0.3);
+
+      animation: titleFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes titleFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* IMPROVED SUBTITLE */
+    .card-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+      font-weight: 500;
+      color: #ffffff;
+
+      text-align: center;
+      line-height: 1.6;
+
+      margin-top: 10px;
+      margin-bottom: 35px;
+      padding: 0 30px;
+
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.3);
+
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Button container */
+    .btn-container {
+      position: relative;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: var(--space-xl) 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    /* Beautiful button styles */
+    .btn {
+      font-family: var(--font-accent);
+      padding: 1.25rem 2.75rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      min-width: 150px;
+      max-width: 220px;
+      flex: 1;
+      overflow: hidden;
+      touch-action: manipulation;
+      user-select: none;
+    }
+
+    /* Yes button - Warm coral gradient */
+    .btn-yes {
+      background: linear-gradient(135deg,
           var(--coral) 0%,
-          var(--rose-pink) 100%
-        );
-        color: white;
+          var(--rose-pink) 100%);
+      color: white;
+      box-shadow:
+        0 8px 30px rgba(255, 107, 107, 0.4),
+        0 2px 8px rgba(214, 52, 71, 0.3);
+      animation: yesButtonGlow 2.5s ease-in-out infinite;
+    }
+
+    .btn-yes::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent);
+      transition: left 0.6s;
+    }
+
+    .btn-yes:hover::before {
+      left: 100%;
+    }
+
+    .btn-yes:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow:
+        0 12px 40px rgba(255, 107, 107, 0.5),
+        0 4px 12px rgba(214, 52, 71, 0.4);
+    }
+
+    .btn-yes:active {
+      transform: translateY(-1px) scale(1.01);
+    }
+
+    @keyframes yesButtonGlow {
+
+      0%,
+      100% {
         box-shadow:
           0 8px 30px rgba(255, 107, 107, 0.4),
           0 2px 8px rgba(214, 52, 71, 0.3);
-        animation: yesButtonGlow 2.5s ease-in-out infinite;
       }
 
-      .btn-yes::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.4),
-          transparent
-        );
-        transition: left 0.6s;
-      }
-
-      .btn-yes:hover::before {
-        left: 100%;
-      }
-
-      .btn-yes:hover {
-        transform: translateY(-3px) scale(1.03);
+      50% {
         box-shadow:
-          0 12px 40px rgba(255, 107, 107, 0.5),
-          0 4px 12px rgba(214, 52, 71, 0.4);
+          0 8px 35px rgba(255, 107, 107, 0.6),
+          0 2px 10px rgba(214, 52, 71, 0.5);
+      }
+    }
+
+    /* No button - Soft outline */
+    .btn-no {
+      background: white;
+      color: var(--deep-rose);
+      border: 3px solid var(--rose-pink);
+      box-shadow: 0 4px 15px rgba(255, 139, 163, 0.25);
+      font-weight: 700;
+    }
+
+    .btn-no.floating {
+      position: absolute !important;
+    }
+
+    .btn-no:hover {
+      background: rgba(255, 139, 163, 0.1);
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(255, 107, 107, 0.35);
+      border-color: var(--coral);
+    }
+
+    /* Attempt counter */
+    .attempt-counter {
+      margin-top: var(--space-md);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--warm-brown);
+      font-weight: 600;
+      text-align: center;
+      font-style: italic;
+      min-height: 28px;
+    }
+
+    .attempt-counter.show {
+      animation: counterAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes counterAppear {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
       }
 
-      .btn-yes:active {
-        transform: translateY(-1px) scale(1.01);
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Fun message styling */
+    .fun-message {
+      position: fixed;
+      top: var(--space-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, white 0%, var(--light-cream) 100%);
+      backdrop-filter: blur(10px);
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--deep-rose);
+      box-shadow:
+        0 10px 40px rgba(214, 52, 71, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(255, 139, 163, 0.3);
+      z-index: 1000;
+      animation: messageSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    @keyframes messageSlide {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px) scale(0.9);
       }
 
-      @keyframes yesButtonGlow {
-        0%,
-        100% {
-          box-shadow:
-            0 8px 30px rgba(255, 107, 107, 0.4),
-            0 2px 8px rgba(214, 52, 71, 0.3);
-        }
-        50% {
-          box-shadow:
-            0 8px 35px rgba(255, 107, 107, 0.6),
-            0 2px 10px rgba(214, 52, 71, 0.5);
-        }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+      }
+    }
+
+    /* Celebration section */
+    .celebration {
+      text-align: center;
+      animation: celebrationReveal 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes celebrationReveal {
+      from {
+        opacity: 0;
+        transform: scale(0.92);
       }
 
-      /* No button - Soft outline */
-      .btn-no {
-        background: white;
-        color: var(--deep-rose);
-        border: 3px solid var(--rose-pink);
-        box-shadow: 0 4px 15px rgba(255, 139, 163, 0.25);
-        font-weight: 700;
+      to {
+        opacity: 1;
+        transform: scale(1);
       }
+    }
 
-      .btn-no.floating {
-        position: absolute !important;
-      }
-
-      .btn-no:hover {
-        background: rgba(255, 139, 163, 0.1);
-        transform: scale(1.05);
-        box-shadow: 0 6px 25px rgba(255, 107, 107, 0.35);
-        border-color: var(--coral);
-      }
-
-      /* Attempt counter */
-      .attempt-counter {
-        margin-top: var(--space-md);
-        font-family: var(--font-body);
-        font-size: 1rem;
-        color: var(--warm-brown);
-        font-weight: 600;
-        text-align: center;
-        font-style: italic;
-        min-height: 28px;
-      }
-
-      .attempt-counter.show {
-        animation: counterAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      @keyframes counterAppear {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Fun message styling */
-      .fun-message {
-        position: fixed;
-        top: var(--space-lg);
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(135deg, white 0%, var(--light-cream) 100%);
-        backdrop-filter: blur(10px);
-        padding: var(--space-sm) var(--space-lg);
-        border-radius: 50px;
-        font-family: var(--font-body);
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--deep-rose);
-        box-shadow:
-          0 10px 40px rgba(214, 52, 71, 0.2),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        border: 2px solid rgba(255, 139, 163, 0.3);
-        z-index: 1000;
-        animation: messageSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        pointer-events: none;
-      }
-
-      @keyframes messageSlide {
-        from {
-          opacity: 0;
-          transform: translateX(-50%) translateY(-30px) scale(0.9);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(-50%) translateY(0) scale(1);
-        }
-      }
-
-      /* Celebration section */
-      .celebration {
-        text-align: center;
-        animation: celebrationReveal 1s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      @keyframes celebrationReveal {
-        from {
-          opacity: 0;
-          transform: scale(0.92);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      .celebration-title {
-        font-family: var(--font-display);
-        font-size: clamp(3rem, 10vw, 5rem);
-        font-weight: 900;
-        background: linear-gradient(
-          135deg,
+    .celebration-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg,
           var(--coral) 0%,
           var(--rose-pink) 50%,
-          var(--warm-gold) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        background-size: 200% 200%;
-        animation:
-          gradientFlow 4s ease infinite,
-          titleBounce 1.5s ease-in-out infinite;
-        margin-bottom: var(--space-lg);
-        letter-spacing: -0.02em;
-        line-height: 1;
-        filter: drop-shadow(0 4px 15px rgba(255, 107, 107, 0.3));
+          var(--warm-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+      animation:
+        gradientFlow 4s ease infinite,
+        titleBounce 1.5s ease-in-out infinite;
+      margin-bottom: var(--space-lg);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      filter: drop-shadow(0 4px 15px rgba(255, 107, 107, 0.3));
+    }
+
+    @keyframes gradientFlow {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
       }
 
-      @keyframes gradientFlow {
-        0%,
-        100% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes titleBounce {
+
+      0%,
+      100% {
+        transform: scale(1);
       }
 
-      @keyframes titleBounce {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.02);
-        }
+      50% {
+        transform: scale(1.02);
+      }
+    }
+
+    /* Couple image frame */
+    .couple-image-container {
+      margin: var(--space-xl) auto;
+      position: relative;
+      width: fit-content;
+      animation: imageReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    @keyframes imageReveal {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
       }
 
-      /* Couple image frame */
-      .couple-image-container {
-        margin: var(--space-xl) auto;
-        position: relative;
-        width: fit-content;
-        animation: imageReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
       }
+    }
 
-      @keyframes imageReveal {
-        from {
-          opacity: 0;
-          transform: translateY(30px) scale(0.9);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
+    /* Warm frame effect */
+    .couple-image-container::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      border: 3px solid var(--rose-pink);
+      border-radius: 2rem;
+      opacity: 0.5;
+      animation: frameGlow 3s ease-in-out infinite;
+    }
 
-      /* Warm frame effect */
-      .couple-image-container::before {
-        content: "";
-        position: absolute;
-        top: -12px;
-        left: -12px;
-        right: -12px;
-        bottom: -12px;
-        border: 3px solid var(--rose-pink);
-        border-radius: 2rem;
+    @keyframes frameGlow {
+
+      0%,
+      100% {
         opacity: 0.5;
-        animation: frameGlow 3s ease-in-out infinite;
+        transform: scale(1);
       }
 
-      @keyframes frameGlow {
-        0%,
-        100% {
-          opacity: 0.5;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.7;
-          transform: scale(1.02);
-        }
+      50% {
+        opacity: 0.7;
+        transform: scale(1.02);
+      }
+    }
+
+    .couple-image {
+      width: 280px;
+      height: 280px;
+      border-radius: 1.5rem;
+      object-fit: cover;
+      display: block;
+      box-shadow:
+        0 25px 60px rgba(139, 111, 71, 0.2),
+        0 10px 30px rgba(255, 107, 107, 0.15);
+      border: 5px solid white;
+      position: relative;
+      z-index: 1;
+      animation: imageFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes imageFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-0.5deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(0.5deg);
+      }
+    }
+
+    /* Decorative hearts around image */
+    .couple-image-container::after {
+      content: "💕";
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 2.5rem;
+      animation: heartBeat 1.5s ease-in-out infinite;
+      filter: drop-shadow(0 4px 8px rgba(255, 107, 107, 0.4));
+    }
+
+    @keyframes heartBeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      25%,
+      75% {
+        transform: scale(1.1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Love letter */
+    .love-letter {
+      font-family: var(--font-body);
+      font-size: clamp(1.15rem, 3vw, 1.3rem);
+      color: var(--warm-brown);
+      line-height: 1.9;
+      margin: var(--space-xl) 0;
+      padding: var(--space-lg);
+      background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.8) 0%,
+          rgba(255, 249, 240, 0.7) 100%);
+      border-radius: 1.5rem;
+      border-left: 5px solid var(--coral);
+      box-shadow:
+        0 8px 30px rgba(139, 111, 71, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      animation: letterReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+    }
+
+    @keyframes letterReveal {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .love-letter strong {
+      color: var(--deep-rose);
+      font-weight: 700;
+    }
+
+    /* Signature */
+    .signature {
+      margin-top: var(--space-xl);
+      font-family: var(--font-display);
+      color: var(--warm-brown);
+      font-style: italic;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-align: center;
+      animation: signatureReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+    }
+
+    @keyframes signatureReveal {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .signature-name {
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      color: var(--deep-rose);
+      display: block;
+      margin-top: var(--space-xs);
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .card {
+        padding: var(--space-lg);
+      }
+
+      .card-title {
+        margin-top: 30px;
+        padding: 0 15px;
+      }
+
+      .card-subtitle {
+        padding: 0 20px;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        min-width: 130px;
+        padding: 1.1rem 2.25rem;
+        font-size: 0.95rem;
+      }
+
+      .btn-container {
+        min-height: 170px;
       }
 
       .couple-image {
-        width: 280px;
-        height: 280px;
-        border-radius: 1.5rem;
-        object-fit: cover;
-        display: block;
-        box-shadow:
-          0 25px 60px rgba(139, 111, 71, 0.2),
-          0 10px 30px rgba(255, 107, 107, 0.15);
-        border: 5px solid white;
-        position: relative;
-        z-index: 1;
-        animation: imageFloat 4s ease-in-out infinite;
+        width: 240px;
+        height: 240px;
       }
 
-      @keyframes imageFloat {
-        0%,
-        100% {
-          transform: translateY(0) rotate(-0.5deg);
-        }
-        50% {
-          transform: translateY(-15px) rotate(0.5deg);
-        }
+      .corner-heart {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: var(--space-sm);
       }
 
-      /* Decorative hearts around image */
-      .couple-image-container::after {
-        content: "💕";
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        font-size: 2.5rem;
-        animation: heartBeat 1.5s ease-in-out infinite;
-        filter: drop-shadow(0 4px 8px rgba(255, 107, 107, 0.4));
+      .card {
+        padding: var(--space-md);
       }
 
-      @keyframes heartBeat {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        25%,
-        75% {
-          transform: scale(1.1);
-        }
-        50% {
-          transform: scale(1.2);
-        }
+      .card-title {
+        margin-top: 25px;
+        padding: 0 10px;
       }
 
-      /* Love letter */
-      .love-letter {
-        font-family: var(--font-body);
-        font-size: clamp(1.15rem, 3vw, 1.3rem);
-        color: var(--warm-brown);
-        line-height: 1.9;
-        margin: var(--space-xl) 0;
-        padding: var(--space-lg);
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.8) 0%,
-          rgba(255, 249, 240, 0.7) 100%
-        );
-        border-radius: 1.5rem;
-        border-left: 5px solid var(--coral);
-        box-shadow:
-          0 8px 30px rgba(139, 111, 71, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        animation: letterReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+      .card-subtitle {
+        padding: 0 15px;
+        margin-bottom: 25px;
       }
 
-      @keyframes letterReveal {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .btn {
+        min-width: 110px;
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
       }
 
-      .love-letter strong {
-        color: var(--deep-rose);
-        font-weight: 700;
+      .fun-message {
+        font-size: 0.95rem;
+        padding: var(--space-xs) var(--space-md);
+        max-width: 90%;
       }
 
-      /* Signature */
-      .signature {
-        margin-top: var(--space-xl);
-        font-family: var(--font-display);
-        color: var(--warm-brown);
-        font-style: italic;
-        font-size: 1.4rem;
-        font-weight: 500;
-        text-align: center;
-        animation: signatureReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+      .couple-image {
+        width: 200px;
+        height: 200px;
+        border: 4px solid white;
       }
 
-      @keyframes signatureReveal {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+      .couple-image-container::before {
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
       }
 
-      .signature-name {
-        font-size: clamp(1.6rem, 5vw, 2.2rem);
-        color: var(--deep-rose);
-        display: block;
-        margin-top: var(--space-xs);
-        font-weight: 700;
-        font-style: normal;
+      .corner-heart {
+        font-size: 1.5rem;
       }
+    }
+  </style>
+</head>
 
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .card {
-          padding: var(--space-lg);
-        }
+<body>
+  <div id="decorativeElements"></div>
 
-        .card-title {
-          margin-top: 30px;
-          padding: 0 15px;
-        }
+  <div class="container">
+    <div class="card" id="mainCard">
+      <div class="corner-heart top-left">💖</div>
+      <div class="corner-heart bottom-right">💝</div>
 
-        .card-subtitle {
-          padding: 0 20px;
-          margin-bottom: 30px;
-        }
+      <h1 class="card-title">Will you be my Valentine?</h1>
 
-        .btn {
-          min-width: 130px;
-          padding: 1.1rem 2.25rem;
-          font-size: 0.95rem;
-        }
+      <div class="ornament">✿ ❀ ✿</div>
 
-        .btn-container {
-          min-height: 170px;
-        }
+      <p class="card-subtitle">
+        Let's create our own beautiful story together 💕
+      </p>
 
-        .couple-image {
-          width: 240px;
-          height: 240px;
-        }
-
-        .corner-heart {
-          font-size: 1.75rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        body {
-          padding: var(--space-sm);
-        }
-
-        .card {
-          padding: var(--space-md);
-        }
-
-        .card-title {
-          margin-top: 25px;
-          padding: 0 10px;
-        }
-
-        .card-subtitle {
-          padding: 0 15px;
-          margin-bottom: 25px;
-        }
-
-        .btn {
-          min-width: 110px;
-          padding: 1rem 2rem;
-          font-size: 0.9rem;
-        }
-
-        .fun-message {
-          font-size: 0.95rem;
-          padding: var(--space-xs) var(--space-md);
-          max-width: 90%;
-        }
-
-        .couple-image {
-          width: 200px;
-          height: 200px;
-          border: 4px solid white;
-        }
-
-        .couple-image-container::before {
-          top: -10px;
-          left: -10px;
-          right: -10px;
-          bottom: -10px;
-        }
-
-        .corner-heart {
-          font-size: 1.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="decorativeElements"></div>
-
-    <div class="container">
-      <div class="card" id="mainCard">
-        <div class="corner-heart top-left">💖</div>
-        <div class="corner-heart bottom-right">💝</div>
-
-        <h1 class="card-title">Will you be my Valentine?</h1>
-
-        <div class="ornament">✿ ❀ ✿</div>
-
-        <p class="card-subtitle">
-          Let's create our own beautiful story together 💕
-        </p>
-
-        <div class="btn-container">
-          <div class="btn-group">
-            <button id="yesButton" class="btn btn-yes">Yes! 💖</button>
-            <button id="noButton" class="btn btn-no">No...</button>
-          </div>
+      <div class="btn-container">
+        <div class="btn-group">
+          <button id="yesButton" class="btn btn-yes">Yes! 💖</button>
+          <button id="noButton" class="btn btn-no">No...</button>
         </div>
-
-        <div id="attemptCounter" class="attempt-counter"></div>
       </div>
+
+      <div id="attemptCounter" class="attempt-counter"></div>
     </div>
+  </div>
 
-    <script>
-      const noButton = document.getElementById("noButton");
-      const yesButton = document.getElementById("yesButton");
-      const btnContainer = document.querySelector(".btn-container");
-      const attemptCounter = document.getElementById("attemptCounter");
-      const decorativeElements = document.getElementById("decorativeElements");
-      let noButtonActive = true;
-      let attemptCount = 0;
-      let isFloating = false;
+  <script>
+    const noButton = document.getElementById("noButton");
+    const yesButton = document.getElementById("yesButton");
+    const btnContainer = document.querySelector(".btn-container");
+    const attemptCounter = document.getElementById("attemptCounter");
+    const decorativeElements = document.getElementById("decorativeElements");
+    let noButtonActive = true;
+    let attemptCount = 0;
+    let isFloating = false;
 
-      // Romantic messages
-      const funMessages = [
-        "रुक जाओ, ऐसा मत करो! 🥺",
-        "रहम करो मुझ जैसे गरीब पर 💭",
-        "मेरा दिल टूट रहा है... 💔",
-        "तू हाँ कर या ना कर, तू है मेरी शेपू 💕",
-        "कर्मा याद है? 🙏",
-        "सीधे से Yes बटन के रास्ते पे जाओ! 😊",
-        "No का कोई ऑप्शन नहीं! 💖",
-        "तेरे में कोई कमी नहीं है ✨",
-        "बस तो... कितनी बार No? 🌟",
-        "सीधा सीधा Yes पे क्लिक करो अब! 🙈",
-      ];
+    // Romantic messages
+    const funMessages = [
+      "रुक जाओ, ऐसा मत करो! 🥺",
+      "रहम करो मुझ जैसे गरीब पर 💭",
+      "मेरा दिल टूट रहा है... 💔",
+      "तू हाँ कर या ना कर, तू है मेरी शेपू 💕",
+      "कर्मा याद है? 🙏",
+      "सीधे से Yes बटन के रास्ते पे जाओ! 😊",
+      "No का कोई ऑप्शन नहीं! 💖",
+      "तेरे में कोई कमी नहीं है ✨",
+      "बस तो... कितनी बार No? 🌟",
+      "सीधा सीधा Yes पे क्लिक करो अब! 🙈",
+    ];
 
-      // Create floating hearts
-      function createFloatingHeart() {
-        const heart = document.createElement("div");
-        heart.className = "floating-heart";
-        const hearts = ["💕", "💖", "💗", "💝", "❤️", "🌸"];
-        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = 8 + Math.random() * 4 + "s";
-        heart.style.animationDelay = Math.random() * 3 + "s";
-        decorativeElements.appendChild(heart);
-        setTimeout(() => heart.remove(), 12000);
+    // Create floating hearts
+    function createFloatingHeart() {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      const hearts = ["💕", "💖", "💗", "💝", "❤️", "🌸"];
+      heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 8 + Math.random() * 4 + "s";
+      heart.style.animationDelay = Math.random() * 3 + "s";
+      decorativeElements.appendChild(heart);
+      setTimeout(() => heart.remove(), 12000);
+    }
+
+    // Create sparkles
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = Math.random() * 100 + "%";
+      sparkle.style.top = Math.random() * 100 + "%";
+      sparkle.style.animationDelay = Math.random() * 2 + "s";
+      decorativeElements.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 3000);
+    }
+
+    // Initialize decorative elements
+    for (let i = 0; i < 8; i++) {
+      setTimeout(createFloatingHeart, i * 500);
+      setTimeout(createSparkle, i * 700);
+    }
+    setInterval(createFloatingHeart, 3000);
+    setInterval(createSparkle, 2000);
+
+    // Move No button
+    function moveNoButton() {
+      if (!noButtonActive) return;
+
+      if (!isFloating) {
+        noButton.classList.add("floating");
+        isFloating = true;
       }
 
-      // Create sparkles
-      function createSparkle() {
-        const sparkle = document.createElement("div");
-        sparkle.className = "sparkle";
-        sparkle.style.left = Math.random() * 100 + "%";
-        sparkle.style.top = Math.random() * 100 + "%";
-        sparkle.style.animationDelay = Math.random() * 2 + "s";
-        decorativeElements.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 3000);
+      attemptCount++;
+
+      if (attemptCount <= funMessages.length) {
+        showFunMessage(funMessages[attemptCount - 1]);
       }
 
-      // Initialize decorative elements
-      for (let i = 0; i < 8; i++) {
-        setTimeout(createFloatingHeart, i * 500);
-        setTimeout(createSparkle, i * 700);
-      }
-      setInterval(createFloatingHeart, 3000);
-      setInterval(createSparkle, 2000);
-
-      // Move No button
-      function moveNoButton() {
-        if (!noButtonActive) return;
-
-        if (!isFloating) {
-          noButton.classList.add("floating");
-          isFloating = true;
-        }
-
-        attemptCount++;
-
-        if (attemptCount <= funMessages.length) {
-          showFunMessage(funMessages[attemptCount - 1]);
-        }
-
-        if (attemptCount >= 3) {
-          attemptCounter.textContent = `${attemptCount} escape attempts... Just say YES! 💕`;
-          attemptCounter.classList.add("show");
-        }
-
-        const containerRect = btnContainer.getBoundingClientRect();
-        const buttonWidth = noButton.offsetWidth;
-        const buttonHeight = noButton.offsetHeight;
-
-        const padding = 10;
-        const maxX = containerRect.width - buttonWidth - padding;
-        const maxY = containerRect.height - buttonHeight - padding;
-
-        const randomX = Math.max(padding, Math.random() * maxX);
-        const randomY = Math.max(padding, Math.random() * maxY);
-
-        noButton.style.left = `${randomX}px`;
-        noButton.style.top = `${randomY}px`;
-        noButton.style.transform = `rotate(${Math.random() * 15 - 7.5}deg)`;
-
-        const newScale = Math.min(1 + attemptCount * 0.06, 1.5);
-        yesButton.style.transform = `scale(${newScale})`;
+      if (attemptCount >= 3) {
+        attemptCounter.textContent = `${attemptCount} escape attempts... Just say YES! 💕`;
+        attemptCounter.classList.add("show");
       }
 
-      function showFunMessage(message) {
-        const msgElement = document.createElement("div");
-        msgElement.className = "fun-message";
-        msgElement.textContent = message;
-        document.body.appendChild(msgElement);
+      const containerRect = btnContainer.getBoundingClientRect();
+      const buttonWidth = noButton.offsetWidth;
+      const buttonHeight = noButton.offsetHeight;
 
+      const padding = 10;
+      const maxX = containerRect.width - buttonWidth - padding;
+      const maxY = containerRect.height - buttonHeight - padding;
+
+      const randomX = Math.max(padding, Math.random() * maxX);
+      const randomY = Math.max(padding, Math.random() * maxY);
+
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+      noButton.style.transform = `rotate(${Math.random() * 15 - 7.5}deg)`;
+
+      const newScale = Math.min(1 + attemptCount * 0.06, 1.5);
+      yesButton.style.transform = `scale(${newScale})`;
+    }
+
+    function showFunMessage(message) {
+      const msgElement = document.createElement("div");
+      msgElement.className = "fun-message";
+      msgElement.textContent = message;
+      document.body.appendChild(msgElement);
+
+      setTimeout(() => {
+        msgElement.style.transition = "all 0.4s ease";
+        msgElement.style.opacity = "0";
+        msgElement.style.transform = "translateX(-50%) translateY(-30px)";
+        setTimeout(() => msgElement.remove(), 400);
+      }, 3000);
+    }
+
+    // Event listeners
+    noButton.addEventListener("mouseenter", moveNoButton);
+    noButton.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      moveNoButton();
+    });
+    noButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      moveNoButton();
+    });
+
+    yesButton.addEventListener("click", showCelebration);
+    yesButton.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      yesButton.click();
+    });
+
+    function showCelebration() {
+      if (!noButtonActive) return;
+      noButtonActive = false;
+      noButton.style.display = "none";
+
+      // Beautiful confetti
+      const colors = ["#ff6b6b", "#ff8fa3", "#ffb4a2", "#ffd89b", "#ff6b9d"];
+
+      for (let i = 0; i < 40; i++) {
         setTimeout(() => {
-          msgElement.style.transition = "all 0.4s ease";
-          msgElement.style.opacity = "0";
-          msgElement.style.transform = "translateX(-50%) translateY(-30px)";
-          setTimeout(() => msgElement.remove(), 400);
-        }, 3000);
+          confetti({
+            particleCount: 120,
+            spread: 130,
+            origin: { y: 0.6 },
+            colors: colors,
+            shapes: ["circle", "square"],
+            gravity: 0.6,
+            scalar: 1.4,
+            ticks: 400,
+          });
+        }, i * 80);
       }
 
-      // Event listeners
-      noButton.addEventListener("mouseenter", moveNoButton);
-      noButton.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        moveNoButton();
-      });
-      noButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        moveNoButton();
-      });
-
-      yesButton.addEventListener("click", showCelebration);
-      yesButton.addEventListener("touchend", (e) => {
-        e.preventDefault();
-        yesButton.click();
-      });
-
-      function showCelebration() {
-        if (!noButtonActive) return;
-        noButtonActive = false;
-        noButton.style.display = "none";
-
-        // Beautiful confetti
-        const colors = ["#ff6b6b", "#ff8fa3", "#ffb4a2", "#ffd89b", "#ff6b9d"];
-
-        for (let i = 0; i < 40; i++) {
-          setTimeout(() => {
-            confetti({
-              particleCount: 120,
-              spread: 130,
-              origin: { y: 0.6 },
-              colors: colors,
-              shapes: ["circle", "square"],
-              gravity: 0.6,
-              scalar: 1.4,
-              ticks: 400,
-            });
-          }, i * 80);
-        }
-
-        // Show celebration
-        document.getElementById("mainCard").innerHTML = `
+      // Show celebration
+      document.getElementById("mainCard").innerHTML = `
           <div class="celebration">
             <div class="celebration-title">
               YES! 💝✨
@@ -1055,23 +1072,34 @@
           </div>
         `;
 
-        // Continuous heart confetti
-        const end = Date.now() + 20000;
-        (function heartRain() {
-          if (Date.now() < end) {
-            confetti({
-              particleCount: 3,
-              spread: 70,
-              origin: { x: Math.random(), y: -0.1 },
-              colors: colors,
-              shapes: ["circle"],
-              gravity: 0.5,
-              scalar: 1.6,
-            });
-            requestAnimationFrame(heartRain);
-          }
-        })();
+      // Continuous heart confetti
+      const end = Date.now() + 20000;
+      (function heartRain() {
+        if (Date.now() < end) {
+          confetti({
+            particleCount: 3,
+            spread: 70,
+            origin: { x: Math.random(), y: -0.1 },
+            colors: colors,
+            shapes: ["circle"],
+            gravity: 0.5,
+            scalar: 1.6,
+          });
+          requestAnimationFrame(heartRain);
+        }
+      })();
+    }
+
+
+    document.addEventListener('copy', function (e) {
+      if (window.getSelection().toString() === window.location.href) {
+        e.clipboardData.setData('text/plain', "Hey Shifa ❤️ Will you be my Valentine?");
+        e.preventDefault();
       }
-    </script>
-  </body>
+    });
+
+
+  </script>
+</body>
+
 </html>
